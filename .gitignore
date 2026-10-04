@@ -15,3 +15,6 @@ brag-output/work/audio3.wav
 brag-output/work/outd3.txt
 brag-output/work/k*.jpg
 brag-output/work/pair.jpg
+brag-output-elevenlabs-*/work/*.jpg
+brag-output-elevenlabs-*/work/vo_mix.wav
+brag-output-elevenlabs-*/composition/snapshots/
