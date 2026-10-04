@@ -3,7 +3,7 @@ import path from 'path';
 const times = process.argv.slice(2).map(Number);
 const b = await chromium.launch();
 const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
-await p.goto('file://' + path.resolve('composition.html'));
+await p.goto('file://' + path.resolve(process.env.HTML||'composition.html'));
 await p.evaluate(() => window.ready);
 for (const t of times) {
   await p.evaluate(t => window.render(t), t);
