@@ -94,3 +94,21 @@ Audio intent: final hit, chord rings out.
 
 **Music mood for this video:** cinematic
 **Audio summary:** silence and a heartbeat become a voice, then the score opens up under the narration and closes on one big hit.
+
+---
+
+# v2: visual rework (20.0s), current render
+
+Feedback on v1 was that the visuals weren't strong enough. Diagnosis: too much empty black, scenes that were just text over a glow, a small and mostly static product UI, little depth or camera motion, and no visual link between the voice and the picture.
+
+**New concept: the narration's words appear on screen as they're spoken.** The promise of the product becomes the visual system.
+- **01 Silence (0–3.4s):** the narration line fills the frame in 168px serif, word by word as it's spoken, but stays grey. The words are literally silent. A dead flatline and "SIGNAL · −∞ dB" sit under it.
+- **02 Voice (3.4–6.0s):** light sweep and hit (beat-locked 3.4s). The grey text blows out, and the flatline erupts into a four-strand glowing waveform driven by the narration's energy. "Then, they learned to speak." lights up word by word, then the ElevenLabs mark and "Eleven v3".
+- **03 Direction (6.0–10.4s):** the editor fills the frame and flips up out of 3D. Its script lines are already there, dimmed. The camera punches in on each line as its audio tag types in ([whispers] / [excited] / [laughs]). The line brightens and its take plays with a glowing playhead, then the camera pulls back to the whole take.
+- **04 Dialogue (10.4–13.6s):** two voice orbs. Each one breathes with the voice on its turn, with the speaker's line in large serif and a dashed link carrying the turn between them.
+- **05 Language (13.6–16.4s):** a full-frame wall of greetings in 20+ languages and 4 scripts, drifting in alternating directions, then "70+ languages" lands on a dark band.
+- **06 ElevenLabs (16.4–20.0s):** the waveform returns and collapses into the two bars of the mark (beat-locked 16.4s). The letters flip up in sequence, then Eleven v3, the "most expressive" claim and elevenlabs.io.
+- **Throughout:** spoken-word captions in a fixed bottom band (peach on the current word), a ticking timecode with a REC dot, chapter labels, faint background words, film grain, vignette and frame marks.
+
+Word timings come from the narration audio itself (`work/word_times.py`: pause detection plus word-length split). Whisper transcription was unavailable because the model download was blocked.
+Narration placement: 0.35, 3.65, 6.3, 10.6, 13.85, 16.75s. The score was re-composed for the 20s cut (`work/score.py`).
